@@ -1,0 +1,80 @@
+ <!-- 1. 先划分 html 网页结构 -->
+ <!-- 2. html 结构 和 js 逻辑 ，相互扶持前进 -->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="wrap wrap-sm">
+        <div class="header">
+            <h1>
+                Yo. 表单
+            </h1> 
+        </div>
+        <div class="form">
+            <form id="signup">
+                <div class="input-wrap">
+                    <label>姓名</label>
+                    <input
+                    data-rule='numeric:true|maxlength:10|minlength:2'
+                    type="text"
+                    name="name"
+                    class="input-control">
+                    <div id="name-input-error" class="input-error hide">姓名格式有误</div>
+                </div>
+                <div class="input-wrap">
+                    <label>年龄</label>
+                    <input
+                    data-rule='max:120|min:18'
+                    type="text"
+                    name="age"
+                    class="input-control">
+                    <div id="age-input-error" class="input-error hide">年龄必须大于18</div>
+                </div>
+                <div class="input-wrap">
+                    <label>用户名</label>
+                    <input 
+                    data-rule='maxlength:18|minlength:2|pattern:"^[a-zA-Z0-9]*$"'
+                    type="text"
+                    name="username"
+                    class="input-control">
+                    <div id="username-input-error" class="input-error hide">只允许填写数字和字母,2-18位</div>
+                </div>
+                <div class="input-wrap">
+                    <label>密码</label>
+                    <input 
+                    data-rule='maxlength:18|minlength:6|pattern:"^[a-zA-Z0-9]*$"'
+                    type="password"
+                    name="password"
+                    class="input-control">
+                    <div id="password-input-error" class="input-error hide">只允许填写数字和字母,6-18位</div>
+                </div>
+                <div class="input-wrap">
+                    <label>自我介绍</label>
+                    <input 
+                    data-rule='maxlength:1080|required:false'
+                    type="text"
+                    name="intro"
+                    class="input-control">
+                    <div id="intro-input-error" class="input-error hide">最大长度1080</div>
+                </div>
+                
+                <button type="button" id="submit" class="btn-submit">提交</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script> -->
+    <script src="./js/ulit.js"></script>
+    <script src="./js/input.js"></script>
+    <script src="./js/validator.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
